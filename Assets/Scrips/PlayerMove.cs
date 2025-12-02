@@ -16,8 +16,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(IsGround.isGround);
-        if (IsGround.isGround)
+        if (IsGround.isGround || isMovePlane.isPlane)
         {
             if (Input.GetKeyDown(KeyCode.W))
             {
