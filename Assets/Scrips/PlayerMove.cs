@@ -23,6 +23,10 @@ public class PlayerMove : MonoBehaviour
             {
                 rb.velocity = new Vector2(rb.velocity.x, JumpAbility);
             }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                rb.velocity = new Vector2(rb.velocity.x, JumpAbility);
+            }
         }
         if (Input.GetKey(KeyCode.A))
         {
@@ -33,4 +37,5 @@ public class PlayerMove : MonoBehaviour
             rb.velocity = new Vector2(MoveSpeed, rb.velocity.y);
         }
     }
+
 }
