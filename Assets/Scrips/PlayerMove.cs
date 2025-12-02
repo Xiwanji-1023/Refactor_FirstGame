@@ -17,6 +17,11 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        MoveContorl();
+    }
+
+    private void MoveContorl()
+    {
         if (IsGround.isGround || isMovePlane.isPlane)
         {
             if (Input.GetKeyDown(KeyCode.W))
@@ -29,7 +34,7 @@ public class PlayerMove : MonoBehaviour
             }
         }
         MoveController = Input.GetAxisRaw("Horizontal");
-        rb.velocity=new Vector2(MoveSpeed*MoveController,rb.velocity.y);
+        rb.velocity = new Vector2(MoveSpeed * MoveController, rb.velocity.y);
     }
 
 }
