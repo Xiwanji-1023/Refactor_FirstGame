@@ -857,7 +857,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1551911701}
         m_TargetAssemblyTypeName: StartScenceButton, Assembly-CSharp
-        m_MethodName: Start
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
