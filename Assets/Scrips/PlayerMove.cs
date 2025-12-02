@@ -8,6 +8,7 @@ public class PlayerMove : MonoBehaviour
     public Rigidbody2D rb;
     public int MoveSpeed=10;
     public int JumpAbility = 5;
+    private float MoveController;
     void Start()
     {
         rb=GetComponent<Rigidbody2D>();
@@ -28,14 +29,8 @@ public class PlayerMove : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, JumpAbility);
             }
         }
-        if (Input.GetKey(KeyCode.A))
-        {
-            rb.velocity = new Vector2(-MoveSpeed, rb.velocity.y);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            rb.velocity = new Vector2(MoveSpeed, rb.velocity.y);
-        }
+        MoveController = Input.GetAxisRaw("Horizontal");
+        rb.velocity=new Vector2(MoveSpeed*MoveController,rb.velocity.y);
     }
 
 }
