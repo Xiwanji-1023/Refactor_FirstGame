@@ -11,6 +11,7 @@ public class PlayerMove : MonoBehaviour
     private float MoveController;
     void Start()
     {
+        Application.targetFrameRate = 60;
         rb=GetComponent<Rigidbody2D>();
     }
 
@@ -36,5 +37,6 @@ public class PlayerMove : MonoBehaviour
         MoveController = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(MoveSpeed * MoveController, rb.velocity.y);
     }
+
 
 }
