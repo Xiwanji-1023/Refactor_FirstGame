@@ -11,6 +11,11 @@ public class StartScenceButton : MonoBehaviour
     {
         SceneManager.LoadScene("GamingScene");
     }
+
+    public void Setting()
+    {
+
+    }
     public void Quit()
     {
         UnityEditor.EditorApplication.isPlaying = false;

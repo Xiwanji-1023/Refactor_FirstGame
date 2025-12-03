@@ -33,9 +33,6 @@ public class PauseContorl : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name != "StartScene")
         {
-            Debug.Log(Vector2.Distance(Pos, CameraPos));
-            Debug.Log(Pos);
-            Debug.Log(CameraPos);
             MoveMenu();
             if (Vector2.Distance(rb.position, CameraPos) <0.1f && isPause) { PasueAll(); }
         }
