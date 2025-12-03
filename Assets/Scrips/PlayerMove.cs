@@ -11,14 +11,24 @@ public class PlayerMove : MonoBehaviour
     private float MoveController;
     void Start()
     {
+        Application.targetFrameRate = 60;
         rb=GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+//<<<<<<< HEAD
         
         if (IsGround.isGround)
+//=======
+        MoveContorl();
+    }
+
+    private void MoveContorl()
+    {
+        if (IsGround.isGround || isMovePlane.isPlane)
+//>>>>>>> 479c402fc3d81b63412c5063c861d6ef14c4253c
         {
             if (Input.GetKeyDown(KeyCode.W))
             {
@@ -30,8 +40,13 @@ public class PlayerMove : MonoBehaviour
             }
         }
         MoveController = Input.GetAxisRaw("Horizontal");
+//<<<<<<< HEAD
         rb.velocity=new Vector2(MoveSpeed*MoveController,rb.velocity.y);
 
+//=======
+        rb.velocity = new Vector2(MoveSpeed * MoveController, rb.velocity.y);
+//>>>>>>> 479c402fc3d81b63412c5063c861d6ef14c4253c
     }
+
 
 }

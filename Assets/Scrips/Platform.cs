@@ -28,16 +28,20 @@ public class Platform : MonoBehaviour
     }
     //private void OnCollisionExit2D(Collision collision)
     //{
+//<<<<<<< HEAD
     //    if(collision.gameObject.CompareTag("Platform"))
+//=======
+    //    if (collision.gameObject.CompareTag("Platform"))
+//>>>>>>> 479c402fc3d81b63412c5063c861d6ef14c4253c
     //    {
     //        currentPlatformCollider = null;
     //    }
     //}
     private IEnumerator DownFromPlatform()
     {
-        BoxCollider2D platformCollider=currentPlatformCollider.GetComponent<BoxCollider2D>();
+        BoxCollider2D platformCollider = currentPlatformCollider.GetComponent<BoxCollider2D>();
         Physics2D.IgnoreCollision(PlayerCollider, platformCollider);
         yield return new WaitForSeconds(1f);
-        Physics2D.IgnoreCollision(PlayerCollider, platformCollider,false);
+        Physics2D.IgnoreCollision(PlayerCollider, platformCollider, false);
     }
 }

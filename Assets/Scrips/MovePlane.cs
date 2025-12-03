@@ -11,9 +11,14 @@ public class MovePlane : MonoBehaviour
     public float MoveSpeed = 0;
     public float ChangeTime = 2;
     Vector2 dir;
+    Vector2 LastPos;
+    Vector2 deltaPos;
+    Transform tra;
+    Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
+        
         switch (MoveAxis)
         {
             case 0: dir = new Vector2(1, 0); break;
@@ -22,6 +27,10 @@ public class MovePlane : MonoBehaviour
             case 3: dir = new Vector2(1, -1); break;
         }
         InvokeRepeating("changeDir", ChangeTime/2, ChangeTime);
+
+        rb = GetComponent<Rigidbody2D>();
+        rb.position = this.transform.position;
+        LastPos = rb.position;
     }
 
     // Update is called once per frame
@@ -30,7 +39,11 @@ public class MovePlane : MonoBehaviour
         if (MoveSpeed != 0)
         {
             float t = Time.deltaTime;
-            this.transform.position += new Vector3(dir.x, dir.y, 0) * MoveSpeed * t;
+            Vector2 targetPos = rb.position + (dir * MoveSpeed * t);
+            rb.MovePosition(targetPos);
+            deltaPos = rb.position - targetPos;
+            LastPos = rb.position;
+
         }
     }
 
@@ -38,6 +51,7 @@ public class MovePlane : MonoBehaviour
     {
         dir *= -1;
     }
+//<<<<<<< HEAD
     private void OnCollisionEnter2D(Collision2D collision)
     {
         collision.transform.parent=transform;
@@ -46,4 +60,22 @@ public class MovePlane : MonoBehaviour
     {
         collision.transform.parent = null;
     }
+//=======
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        Debug.Log(deltaPos);
+        if (collision.CompareTag("Player"))
+        {
+            Rigidbody2D PlayerRb = collision.gameObject.transform.parent.gameObject.GetComponent<Rigidbody2D>();
+            if(PlayerRb != null)
+            {
+                Vector3 TargetPos = new Vector3(PlayerRb.position.x - deltaPos.x, PlayerRb.position.y + deltaPos.y, 0);
+                PlayerRb.MovePosition(TargetPos);
+
+            }
+        }
+
+    }
 }
+
