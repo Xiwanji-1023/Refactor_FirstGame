@@ -7,37 +7,38 @@ using UnityEngine.SceneManagement;
 public class PauseContorl : MonoBehaviour
 {
     bool isPause = false;
-    Vector3 offScreenPos;
-    Vector3 onScreenPos;
-    Vector3 Pos;
-    float Speed = 150;
+    Vector2 offScreenPos;
+    Vector2 Pos;
+    Vector2 CameraPos;
+    float Speed = 500;
     Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
-        offScreenPos = new Vector3(0, this.transform.localPosition.y, 0);
-        Pos = offScreenPos + this.transform.parent.position;
         rb = GetComponent<Rigidbody2D>();
+        offScreenPos = new Vector3(0, 20.5f);
+        CameraPos = this.transform.parent.gameObject.GetComponent<Rigidbody2D>().position;
+        Pos = CameraPos + offScreenPos;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(SceneManager.GetActiveScene().name != "StartScene")
+        if (SceneManager.GetActiveScene().name != "StartScene")
         {
             InputPause();
-
-
-            if (isPause && Vector3.Distance(rb.position, Pos) < 10.01f)
-            {
-                PasueAll();
-            }
-            else
-            {
-                MoveMenu();
-            }
         }
-
+    }
+    private void FixedUpdate()
+    {
+        if (SceneManager.GetActiveScene().name != "StartScene")
+        {
+            Debug.Log(Vector2.Distance(Pos, CameraPos));
+            Debug.Log(Pos);
+            Debug.Log(CameraPos);
+            MoveMenu();
+            if (Vector2.Distance(rb.position, CameraPos) <0.1f && isPause) { PasueAll(); }
+        }
     }
 
     private void InputPause()
@@ -46,8 +47,7 @@ public class PauseContorl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             isPause = !isPause;
-            if (isPause) {Pos= this.transform.parent.position; }
-            else { Pos = offScreenPos + this.transform.parent.position; ResumeAll(); }
+            if (!isPause) { ResumeAll(); }
             
         }
 
@@ -65,6 +65,8 @@ public class PauseContorl : MonoBehaviour
     }
     private void MoveMenu()
     {
+        CameraPos = this.transform.parent.gameObject.GetComponent<Rigidbody2D>().position;
+        Pos = CameraPos + ((!isPause)?offScreenPos:Vector2.zero);
         float t = Time.deltaTime;
         Vector3 newPosition = Vector3.MoveTowards(rb.position, Pos, Speed * t);
         rb.MovePosition(newPosition);
