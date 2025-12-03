@@ -13,10 +13,10 @@ public class PlayerDead : MonoBehaviour
     {
         if(collision.CompareTag("Traps"))
         {
-            //播放死亡动画
+            //Dead Animation
 
             rb.bodyType = RigidbodyType2D.Static;
-            //播放复活动画
+            //revive Animation
 
             transform.position = SavePoint.spp;
             rb.bodyType=RigidbodyType2D.Dynamic;

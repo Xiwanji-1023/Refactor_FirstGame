@@ -60,7 +60,7 @@ public class MovePlane : MonoBehaviour
     {
         collision.transform.parent = null;
     }
-//=======
+    //=======
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -68,7 +68,7 @@ public class MovePlane : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Rigidbody2D PlayerRb = collision.gameObject.transform.parent.gameObject.GetComponent<Rigidbody2D>();
-            if(PlayerRb != null)
+            if (PlayerRb != null)
             {
                 Vector3 TargetPos = new Vector3(PlayerRb.position.x - deltaPos.x, PlayerRb.position.y + deltaPos.y, 0);
                 PlayerRb.MovePosition(TargetPos);

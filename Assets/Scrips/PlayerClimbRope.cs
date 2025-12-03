@@ -7,7 +7,7 @@ public class PlayerClimbRope : MonoBehaviour
     public Rigidbody2D rb;
     private float ClimbController;
     public int ClimbSpeed=5;
-    void Update()
+    void Start()
     {
         rb=GetComponent<Rigidbody2D>();
     }
