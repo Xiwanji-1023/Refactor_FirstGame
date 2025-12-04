@@ -12,7 +12,7 @@ public class changeMenu : MonoBehaviour
     Vector2 TargetPos;
     Vector2 deltaPos;
 
-    bool Move = false;
+    bool isMove = false;
 
     void Start()
     {
@@ -23,20 +23,21 @@ public class changeMenu : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Move)
+        if (isMove)
         {
             CurrentMenu.MovePosition(TargetPos);
             TargetMenu.MovePosition(CurrentPos);
             if (Vector2.Distance(CurrentMenu.position, TargetPos) < 0.1f && Vector2.Distance(TargetMenu.position, CurrentPos) < 0.1f)
             {
-                Move = false;
+                isMove = false;
             }
         }
     }
     public void ChangeMenu()
     {
+
         CurrentPos = CurrentMenu.position;
         TargetPos = TargetMenu.position;
-        Move = true;
+        isMove = true;
     }
 }

@@ -7,13 +7,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class StartScenceButton : MonoBehaviour
+public class ButtonFunc: MonoBehaviour
 {
 
-    private void Start()
-    {
-        
-    }
     public void StartGame()
     {
         SceneManager.LoadScene("GamingScene");
