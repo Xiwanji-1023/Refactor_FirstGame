@@ -26,7 +26,7 @@ public class PauseContorl : MonoBehaviour
         BaseSetting.isPause = !BaseSetting.isPause;
 
         if (!BaseSetting.isPause) { ResumeAll(); }
-        scr.ChangeMenu();
+        scr.Change();
         if (BaseSetting.isPause) { yield return new WaitForSeconds(0.2f); PasueAll(); }
     }
     private void PasueAll()

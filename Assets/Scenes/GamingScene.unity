@@ -7175,10 +7175,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6a6ed826ae772a40ab66b0aab0a771a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentMenu: {fileID: 0}
-  TargetMenu: {fileID: 0}
-  canvas: {fileID: 0}
+  CurrentMenu: {fileID: 1419470318}
+  TargetMenu: {fileID: 1194747115}
+  canvas: {fileID: 1744896194}
   isInit: 1
+  DurationAnimation: 0.1
+  t: 0
 --- !u!114 &1915761601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7356,10 +7358,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6a6ed826ae772a40ab66b0aab0a771a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentMenu: {fileID: 1194747119}
-  TargetMenu: {fileID: 1419470319}
+  CurrentMenu: {fileID: 1194747115}
+  TargetMenu: {fileID: 1419470318}
   canvas: {fileID: 1744896194}
   isInit: 0
+  DurationAnimation: 0.1
+  t: 0
 --- !u!114 &2042010437
 MonoBehaviour:
   m_ObjectHideFlags: 0
