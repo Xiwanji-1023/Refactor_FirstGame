@@ -1,54 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class changeMenu : MonoBehaviour
 {
-    public RectTransform CurrentMenu;
-    public RectTransform TargetMenu;
+    public Rigidbody2D CurrentMenu;
+    public Rigidbody2D TargetMenu;
     public RectTransform canvas;
     public bool isInit = false;
-    public float DurationAnimation = 0.1f;
     Vector2 CurrentPos;
     Vector2 TargetPos;
     Vector2 deltaPos;
-    bool isAnimation = false;
-    public float t;
+
+    bool isMove = false;
 
     void Start()
     {
-        if(isInit)
-        {
-            deltaPos = new Vector2(0, canvas.rect.height);
-            //CurrentMenu.anchoredPosition = canvas.anchoredPosition;
-            TargetMenu.anchoredPosition = CurrentMenu.anchoredPosition + deltaPos;
-        }
+        deltaPos = new Vector2(0, canvas.rect.height * 1.5f);
+        if(isInit) { TargetMenu.position = CurrentMenu.position + deltaPos; }
+
     }
 
-    public void Change()
+    private void FixedUpdate()
     {
-        if (!isAnimation) { StartCoroutine(ChangeMenu()); }
-    }
-
-    IEnumerator ChangeMenu()
-    {
-        isAnimation = true;
-        CurrentPos = CurrentMenu.anchoredPosition;
-        TargetPos = TargetMenu.anchoredPosition;
-        float PassTime = 0f;
-        while (PassTime < DurationAnimation)
+        if (isMove)
         {
-            PassTime += Time.unscaledDeltaTime;
-            t = Mathf.Clamp01(PassTime/DurationAnimation);
-            CurrentMenu.anchoredPosition = Vector2.Lerp(CurrentPos, TargetPos, t);
-            TargetMenu.anchoredPosition = Vector2.Lerp(TargetPos, CurrentPos, t);
-            yield return null;
+            CurrentMenu.MovePosition(TargetPos);
+            TargetMenu.MovePosition(CurrentPos);
+            if (Vector2.Distance(CurrentMenu.position, TargetPos) < 0.1f && Vector2.Distance(TargetMenu.position, CurrentPos) < 0.1f)
+            {
+                isMove = false;
+            }
         }
+    }
+    public void ChangeMenu()
+    {
 
-        CurrentMenu.anchoredPosition = TargetPos;
-        TargetMenu.anchoredPosition = CurrentPos;
-        isAnimation = false;
-        
+        CurrentPos = CurrentMenu.position;
+        TargetPos = TargetMenu.position;
+        isMove = true;
     }
 }
