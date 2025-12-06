@@ -12,7 +12,7 @@ public class PlayerMove : MonoBehaviour
     public int MoveSpeed = 10;
     public int JumpAbility = 5;
     private float MoveController;
-    private bool W, A, S, D, I, J, K, L;
+    static public bool W, A, S, D, I, J, K, L;
 
     [Header("dash info")]
     [SerializeField] private float dashSpeed;
@@ -38,6 +38,38 @@ public class PlayerMove : MonoBehaviour
                 I = false;
                 L = false;
                 break;
+            case "awkl":
+                A = true;
+                S = false;
+                W = true;
+                D = false;
+                J = false;
+                K = true;
+                I = false;
+                L = true;
+                break;
+            case "ijsd":
+                A = false;
+                S = true;
+                W = false;
+                D = true;
+                J = true;
+                K = false;
+                I = true;
+                L = false;
+                break;
+            case "adik":
+                A = true;
+                S = false;
+                W = false;
+                D = true;
+                J = false;
+                K = true;
+                I = true;
+                L = false;
+                break;
+
+
         }
 
         if (UnityEngine.Input.GetKey(KeyCode.A) && A)

@@ -10,7 +10,7 @@ public class Platform : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.S)||Input.GetKeyDown(KeyCode.DownArrow))
+        if((Input.GetKeyDown(KeyCode.S)&&PlayerMove.S)||(Input.GetKeyDown(KeyCode.K)&&PlayerMove.K))
         {
             if (currentPlatformCollider != null)
             {
@@ -26,17 +26,6 @@ public class Platform : MonoBehaviour
         }
 
     }
-    //private void OnCollisionExit2D(Collision collision)
-    //{
-//<<<<<<< HEAD
-    //    if(collision.gameObject.CompareTag("Platform"))
-//=======
-    //    if (collision.gameObject.CompareTag("Platform"))
-//>>>>>>> 479c402fc3d81b63412c5063c861d6ef14c4253c
-    //    {
-    //        currentPlatformCollider = null;
-    //    }
-    //}
     private IEnumerator DownFromPlatform()
     {
         BoxCollider2D platformCollider = currentPlatformCollider.GetComponent<BoxCollider2D>();
@@ -44,4 +33,15 @@ public class Platform : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Physics2D.IgnoreCollision(PlayerCollider, platformCollider, false);
     }
+    //private void OnCollisionExit2D(Collision collision)
+    //{
+    //<<<<<<< HEAD
+    //    if(collision.gameObject.CompareTag("Platform"))
+    //=======
+    //    if (collision.gameObject.CompareTag("Platform"))
+    //>>>>>>> 479c402fc3d81b63412c5063c861d6ef14c4253c
+    //    {
+    //        currentPlatformCollider = null;
+    //    }
+    //}
 }
