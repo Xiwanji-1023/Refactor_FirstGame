@@ -14,6 +14,13 @@ public class VoiceFunc : MonoBehaviour
     public Toggle BGMtoggle = null;
     public Toggle SoundToggle = null;
 
+    private void Update()
+    {
+        if(bar!=null) { bar.value = BaseSetting.VoiceVolume; }
+        if(InputText != null) { InputText.text = (Mathf.RoundToInt(BaseSetting.VoiceVolume*100)).ToString(); }
+        if(BGMtoggle != null) { BGMtoggle.isOn = BaseSetting.BackGroundMusic; }
+        if(SoundToggle != null) { SoundToggle.isOn = BaseSetting.Sound; }
+    }
     public void ScrollVoice()
     {
         InputText.text = Mathf.RoundToInt(bar.value*100).ToString();

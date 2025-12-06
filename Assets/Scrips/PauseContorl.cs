@@ -25,12 +25,13 @@ public class PauseContorl : MonoBehaviour
             GetComponent<changeMenu>().Change();
             StartCoroutine(Pause());
         }
+        UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(null);
     }
     IEnumerator Pause()
     {
         BaseSetting.isPause = !BaseSetting.isPause;
         if (BaseSetting.isPause) { yield return new WaitForSeconds(0.2f); PasueAll(); }
-        UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(null);
+
     }
     private void PasueAll()
     {
