@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class PauseContorl : MonoBehaviour
@@ -37,7 +36,6 @@ public class PauseContorl : MonoBehaviour
     }
     private void ResumeAll()
     {
-        if (EventSystem.current != null) { EventSystem.current.SetSelectedGameObject(null); }
         Time.timeScale = 1f;
         Debug.Log("”Œœ∑ª÷∏¥");
     }

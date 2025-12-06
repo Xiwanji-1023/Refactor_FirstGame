@@ -14,7 +14,7 @@ public class changeMenu : MonoBehaviour
     Vector2 TargetPos;
     Vector2 deltaPos;
     bool isAnimation = false;
-    public float t;
+    float t = 0;
 
     void Start()
     {
@@ -52,3 +52,5 @@ public class changeMenu : MonoBehaviour
         
     }
 }
+
+// ±êÊ¶·û
