@@ -9,8 +9,8 @@ public class Platform : MonoBehaviour
     public BoxCollider2D PlayerCollider;
 
     void Update()
-    {
-        if((Input.GetKeyDown(KeyCode.S)&&PlayerMove.S)||(Input.GetKeyDown(KeyCode.K)&&PlayerMove.K))
+    { 
+        if (Input.GetKey(PlayerMove.currentKey[2]))
         {
             if (currentPlatformCollider != null)
             {
