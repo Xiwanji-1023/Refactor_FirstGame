@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Windows;
 
 
 public class PlayerMove : MonoBehaviour
@@ -18,13 +17,27 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float dashSpeed;
     [SerializeField] private float dashDuration;
     [SerializeField] private float dashTime;
+
+    List<KeyCode> currentKey;
+    Dictionary<int, List<KeyCode>> key;
     void Start()
     {
         Application.targetFrameRate = 60;
         rb = GetComponent<Rigidbody2D>();
+
+        currentKey = new List<KeyCode>();
+        key = new Dictionary<int, List<KeyCode>>()
+        {
+            [0] = new List<KeyCode>() { KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D, },
+            [1] = new List<KeyCode>() { KeyCode.A, KeyCode.W, KeyCode.K, KeyCode.L, },
+            [2] = new List<KeyCode>() { KeyCode.I, KeyCode.J, KeyCode.S, KeyCode.D, },
+            [3] = new List<KeyCode>() { KeyCode.A, KeyCode.D, KeyCode.O, KeyCode.K, },
+        };
+
     }
     void Update()
     {
+        if (Input.GetKey(currentKey[0]))
         //MoveController = UnityEngine.Input.GetAxisRaw("Horizontal");
         switch (nowKeys)
         {
@@ -138,6 +151,11 @@ public class PlayerMove : MonoBehaviour
 
         }
     }
+
+    // wdjk
+    // awkl
+    // ijsd
+    // adok
 
 }
 
