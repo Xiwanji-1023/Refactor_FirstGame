@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -10,7 +11,6 @@ public class PlayerMove : MonoBehaviour
     public int MoveSpeed = 10;
     public int JumpAbility = 5;
     public static float MoveController;
-    static public bool W, A, S, D, I, J, K, L;
 
     [Header("dash info")]
     [SerializeField] private float dashSpeed;
@@ -18,7 +18,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float dashTime;
 
     static public List<KeyCode> currentKey;
-    public int currentKeyIndex=0;
+    static int currentKeyIndex=0;
     static public Dictionary<int, List<KeyCode>> key;
     void Start()
     {
