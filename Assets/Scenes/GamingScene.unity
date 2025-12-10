@@ -8742,10 +8742,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1701277381}
   - component: {fileID: 1701277380}
-  - component: {fileID: 1701277379}
   - component: {fileID: 1701277378}
   - component: {fileID: 1701277377}
   - component: {fileID: 1701277376}
+  - component: {fileID: 1701277382}
   m_Layer: 0
   m_Name: MoveTrap (1)
   m_TagString: Traps
@@ -8844,21 +8844,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 0.25}
   m_EdgeRadius: 0
---- !u!114 &1701277379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701277375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e4513c9c6b326149a839f33245c392e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoveAxis: 0
-  MoveSpeed: 1
-  ChangeTime: 2
 --- !u!212 &1701277380
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8926,6 +8911,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1701277382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701277375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf5d17dd2ad30c4e8ac625094acf414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveAxis: 0
+  MoveSpeed: 1
+  ChangeTime: 2
 --- !u!1 &1703673760
 GameObject:
   m_ObjectHideFlags: 0
@@ -10757,10 +10757,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3839010663618017754}
   - component: {fileID: 2553202128656417733}
-  - component: {fileID: 7313778949875656434}
   - component: {fileID: 4442584955603006074}
   - component: {fileID: 3537851921506304681}
   - component: {fileID: 1511605071858115792}
+  - component: {fileID: 4442584955603006075}
   m_Layer: 0
   m_Name: MoveTrap
   m_TagString: Traps
@@ -11098,6 +11098,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 0.25}
   m_EdgeRadius: 0
+--- !u!114 &4442584955603006075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314121648809012079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf5d17dd2ad30c4e8ac625094acf414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveAxis: 0
+  MoveSpeed: 1
+  ChangeTime: 2
 --- !u!1001 &4547563412023238166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11159,21 +11174,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb32923db68f45d45a1e2eb920663752, type: 3}
---- !u!114 &7313778949875656434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1314121648809012079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e4513c9c6b326149a839f33245c392e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoveAxis: 0
-  MoveSpeed: 1
-  ChangeTime: 2
 --- !u!1001 &8025414091952582262
 PrefabInstance:
   m_ObjectHideFlags: 0
