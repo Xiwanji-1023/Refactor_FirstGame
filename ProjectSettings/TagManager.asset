@@ -9,6 +9,8 @@ TagManager:
   - Rope
   - Ground
   - Traps
+  - MovePlane
+  - PlayerFoot
   layers:
   - Default
   - TransparentFX

@@ -10,7 +10,6 @@ public class PauseContorl : MonoBehaviour
     public bool isOn =false;
     void Update()
     {
-        Debug.Log(BaseSetting.isPause);
         if (!BaseSetting.isPause) { ResumeAll(); }
         if (isOn && SceneManager.GetActiveScene().name != "StartScene" && Input.GetKeyDown(KeyCode.Escape))
         {

@@ -46,20 +46,6 @@ public class PlayerMove : MonoBehaviour
     }
     void Update()
     {
-        flipcontroller();
-        currentKey = key[currentKeyIndex];
-        if (Input.GetKey(currentKey[0]))
-        {
-            if (IsGround.isGround || isMovePlane.isPlane)
-            {
-                if (dashTime > 0)
-                {
-                    rb.velocity = new Vector2(MoveController * dashSpeed, rb.velocity.y);
-                }
-                rb.velocity = new Vector2(rb.velocity.x, JumpAbility);
-
-            }
-        }
         if (Input.GetKey(currentKey[1]))
         {
             MoveController = -1;
@@ -75,6 +61,22 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKeyUp(currentKey[3]))
         {
             MoveController = 0;
+        }
+
+        flipcontroller();
+        currentKey = key[currentKeyIndex];
+        if (Input.GetKey(currentKey[0]))
+        {
+            Debug.Log(isMovePlane.isPlane);
+            if (IsGround.isGround || isMovePlane.isPlane)
+            {
+                if (dashTime > 0)
+                {
+                    rb.velocity = new Vector2(MoveController * dashSpeed, rb.velocity.y);
+                }
+                rb.velocity = new Vector2(rb.velocity.x, JumpAbility);
+
+            }
         }
 
         if (Input.GetKey(KeyCode.LeftShift))
