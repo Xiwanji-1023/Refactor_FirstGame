@@ -19,11 +19,6 @@ public class PlayerMove : MonoBehaviour
     private bool faceRight = true;
 
 
-    [Header("dash info")]
-    [SerializeField] private float dashSpeed;
-    [SerializeField] private float dashDuration;
-    [SerializeField] private float dashTime;
-
     static public List<KeyCode> currentKey;
     static int currentKeyIndex = 0;
     static public Dictionary<int, List<KeyCode>> key;
@@ -70,27 +65,19 @@ public class PlayerMove : MonoBehaviour
             Debug.Log(isMovePlane.isPlane);
             if (IsGround.isGround || isMovePlane.isPlane)
             {
-                if (dashTime > 0)
-                {
-                    rb.velocity = new Vector2(MoveController * dashSpeed, rb.velocity.y);
-                }
+               
                 rb.velocity = new Vector2(rb.velocity.x, JumpAbility);
 
             }
         }
 
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            dashTime = dashDuration;
-        }
-        dashTime -= Time.deltaTime;
-
+   
         rb.velocity = new Vector2(MoveSpeed * MoveController, rb.velocity.y);
         //以下用于动画
         isWalk = rb.velocity.x != 0;
         anim.SetBool("iswalk", isWalk);
         //
-        //MoveController = UnityEngine.Input.GetAxisRaw("Horizontal");
+       // MoveController = UnityEngine.Input.GetAxisRaw("Horizontal");
         //switch (nowKeys)
         //{
         //    case "wdjk":
