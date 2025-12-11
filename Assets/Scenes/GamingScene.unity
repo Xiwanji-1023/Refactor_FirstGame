@@ -10129,18 +10129,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4291137240904578076, guid: b2f8584e9a42e3149aa7e956ae8e73e0, type: 3}
   m_PrefabInstance: {fileID: 1321661073575889869}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1778919056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778919046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12e2cecfb3c54de42bea4f54f0d1f892, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1778919057
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10173,7 +10161,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06395945, y: -0.46301046}
+  m_Offset: {x: 0.06395945, y: -0.4422748}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -10184,9 +10172,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6162422, y: 0.060011923}
+  m_Size: {x: 0.6162422, y: 0.101483226}
   m_EdgeRadius: 0
---- !u!114 &1778919067
+--- !u!114 &1778919077
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10195,7 +10183,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1778919046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b117f4b77e82b6444bf43bcdc80ab84a, type: 3}
+  m_Script: {fileID: 11500000, guid: b908ecfb5cca138489065da9f0b84416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1815671266
@@ -11756,7 +11744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1854040020531078769, guid: b2f8584e9a42e3149aa7e956ae8e73e0, type: 3}
       propertyPath: m_TagString
-      value: PlayerFoot
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1854040020531078769, guid: b2f8584e9a42e3149aa7e956ae8e73e0, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11768,7 +11756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3226814941317676070, guid: b2f8584e9a42e3149aa7e956ae8e73e0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.481
+      value: -0.467
       objectReference: {fileID: 0}
     - target: {fileID: 4291137240904578076, guid: b2f8584e9a42e3149aa7e956ae8e73e0, type: 3}
       propertyPath: m_Name
@@ -11796,11 +11784,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7472084190640615011, guid: b2f8584e9a42e3149aa7e956ae8e73e0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.7
+      value: -5.23
       objectReference: {fileID: 0}
     - target: {fileID: 7472084190640615011, guid: b2f8584e9a42e3149aa7e956ae8e73e0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.35
+      value: -2.4
       objectReference: {fileID: 0}
     - target: {fileID: 7472084190640615011, guid: b2f8584e9a42e3149aa7e956ae8e73e0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11840,7 +11828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7569579037318067827, guid: b2f8584e9a42e3149aa7e956ae8e73e0, type: 3}
       propertyPath: m_Size.y
-      value: 0.94402117
+      value: 0.90254986
       objectReference: {fileID: 0}
     - target: {fileID: 7569579037318067827, guid: b2f8584e9a42e3149aa7e956ae8e73e0, type: 3}
       propertyPath: m_Offset.x
@@ -11848,7 +11836,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7569579037318067827, guid: b2f8584e9a42e3149aa7e956ae8e73e0, type: 3}
       propertyPath: m_Offset.y
-      value: -0.034989446
+      value: -0.01425381
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11859,10 +11847,7 @@ PrefabInstance:
       addedObject: {fileID: 1778919057}
     - targetCorrespondingSourceObject: {fileID: 4291137240904578076, guid: b2f8584e9a42e3149aa7e956ae8e73e0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1778919056}
-    - targetCorrespondingSourceObject: {fileID: 4291137240904578076, guid: b2f8584e9a42e3149aa7e956ae8e73e0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1778919067}
+      addedObject: {fileID: 1778919077}
   m_SourcePrefab: {fileID: 100100000, guid: b2f8584e9a42e3149aa7e956ae8e73e0, type: 3}
 --- !u!251 &1511605071858115792
 PlatformEffector2D:
