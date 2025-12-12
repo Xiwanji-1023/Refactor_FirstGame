@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8384574229428766542}
   - component: {fileID: 7043453121303564}
   m_Layer: 0
-  m_Name: 3_Ground
+  m_Name: 1.1_Ground_top
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 2437736454645140910}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.04, y: -4.52, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1.1591}
+  m_LocalPosition: {x: 2.043, y: -4.518, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1.1677294}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -71,10 +71,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 569555741
+  m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -830298282, guid: d86a150b537875249a13bf1c4f5c65f2, type: 3}
+  m_Sprite: {fileID: 1712482922, guid: aa9376b91b6db5e418c32cc4acb7dbe5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -117,16 +117,16 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0017062128, y: 0.0027067363}
+  m_Offset: {x: 0.0011425167, y: 0.0002616197}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 0.18, y: 0.18}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32453018, y: 0.32252908}
+  m_Size: {x: 0.17615974, y: 0.18243396}
   m_EdgeRadius: 0
