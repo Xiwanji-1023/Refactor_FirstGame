@@ -45,10 +45,9 @@ public class MovePlane : MonoBehaviour
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if(collision.gameObject.CompareTag("Player") && !Input.anyKey)
         {
             Rigidbody2D rbPlayer = collision.gameObject.GetComponent<Rigidbody2D>();
-            Debug.Log(rbPlayer.position + deltaPos);
             rbPlayer.MovePosition(rbPlayer.position + deltaPos);
         }
     }

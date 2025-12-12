@@ -10,8 +10,10 @@ public class IsGround : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        Debug.Log(collision.gameObject.tag);
         if(collision.CompareTag("Ground")||collision.CompareTag("Platform"))
         {
+            Debug.LogWarning("1");
             isGround = true;
         }
     }
