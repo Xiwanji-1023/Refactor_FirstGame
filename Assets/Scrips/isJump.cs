@@ -11,12 +11,12 @@ public class isJump : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
 
-        tag = collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("MovePlane");
+        tag = collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("MovePlane") || collision.gameObject.CompareTag("Platform");
         if (tag) { Jump = true; }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        tag = collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("MovePlane");
+        tag = collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("MovePlane") || collision.gameObject.CompareTag("Platform");
         if (tag) { Jump = false; }
     }
 }
