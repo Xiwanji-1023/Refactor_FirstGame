@@ -10,13 +10,13 @@ public class Platform : MonoBehaviour
 
     void Update()
     { 
-        if (Input.GetKey(PlayerMove.currentKey[2]))
+        /*if (Input.GetKey(PlayerMove.currentKey[2]))
         {
             if (currentPlatformCollider != null)
             {
                 StartCoroutine(DownFromPlatform());
             }
-        }
+        }*/
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
