@@ -13,6 +13,8 @@ TagManager:
   - Pipe
   - bracket
   - wall
+  - decorate
+  - savePoint
   layers:
   - Default
   - TransparentFX
@@ -53,9 +55,12 @@ TagManager:
   - name: background
     uniqueID: 2165780641
     locked: 0
-  - name: gameScene
-    uniqueID: 569555741
+  - name: gameScene_AfterPlayer
+    uniqueID: 891755637
     locked: 0
   - name: Player
     uniqueID: 385898277
+    locked: 0
+  - name: gameScene_BeforePlayer
+    uniqueID: 569555741
     locked: 0
