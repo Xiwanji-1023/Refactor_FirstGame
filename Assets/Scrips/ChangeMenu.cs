@@ -1,54 +1,51 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
+using TMPro;
 
-public class changeMenu : MonoBehaviour
+// 玩家靠近自动显示UI面板，离开自动关闭
+public class AutoShowBillboardUI : MonoBehaviour
 {
-    public RectTransform CurrentMenu;
-    public RectTransform TargetMenu;
-    public RectTransform canvas;
-    public bool isInit = false;
-    public float DurationAnimation = 0.1f;
-    Vector2 CurrentPos;
-    Vector2 TargetPos;
-    Vector2 deltaPos;
-    float t = 0;
+    [Header("UI配置")]
+    public GameObject billboardUIPanel; // 拖拽场景中的BillboardUIPanel
+    public TextMeshProUGUI uiText; // 拖拽Panel下的UIText组件
+    public string uiContent = "欢迎来到新手村！\n请前往铁匠铺领取任务。";
 
     void Start()
     {
-        if(isInit)
+        // 初始化文字内容
+        if (uiText != null)
         {
-            deltaPos = new Vector2(0, canvas.rect.height);
-            //CurrentMenu.anchoredPosition = canvas.anchoredPosition;
-            TargetMenu.anchoredPosition = CurrentMenu.anchoredPosition + deltaPos;
+            uiText.text = uiContent;
+        }
+        // 初始隐藏UI
+        billboardUIPanel.SetActive(false);
+    }
+
+    // 玩家进入范围，显示UI
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            billboardUIPanel.SetActive(true);
         }
     }
 
-    public void Change()
+    // 玩家离开范围，关闭UI
+    private void OnTriggerExit2D(Collider2D other)
     {
+<<<<<<< Updated upstream
         if (!BaseSetting.isMenuAnimation) { BaseSetting.isMenuAnimation = true; StartCoroutine(ChangeMenu()); }
 
+=======
+        if (other.CompareTag("Player"))
+        {
+            billboardUIPanel.SetActive(false);
+        }
+>>>>>>> Stashed changes
     }
 
-    IEnumerator ChangeMenu()
+    // 防止UI残留
+    private void OnDisable()
     {
-
-        CurrentPos = CurrentMenu.anchoredPosition;
-        TargetPos = TargetMenu.anchoredPosition;
-        float PassTime = 0f;
-        while (PassTime < DurationAnimation)
-        {
-            PassTime += Time.unscaledDeltaTime;
-            t = Mathf.Clamp01(PassTime/DurationAnimation);
-            CurrentMenu.anchoredPosition = Vector2.Lerp(CurrentPos, TargetPos, t);
-            TargetMenu.anchoredPosition = Vector2.Lerp(TargetPos, CurrentPos, t);
-            yield return null;
-        }
-
-        CurrentMenu.anchoredPosition = TargetPos;
-        TargetMenu.anchoredPosition = CurrentPos;
-        BaseSetting.isMenuAnimation = false;
-        
+        billboardUIPanel.SetActive(false);
     }
 }
