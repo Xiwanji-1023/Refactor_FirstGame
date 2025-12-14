@@ -26,7 +26,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float dashTime;
 
     static public List<KeyCode> currentKey;
-    static int currentKeyIndex = 0;
+    static public int currentKeyIndex = 0;
     static public Dictionary<int, List<KeyCode>> key;
     void Start()
     {
@@ -43,11 +43,11 @@ public class PlayerMove : MonoBehaviour
             [2] = new List<KeyCode>() { KeyCode.I, KeyCode.J, KeyCode.S, KeyCode.D, },
             [3] = new List<KeyCode>() { KeyCode.A, KeyCode.D, KeyCode.O, KeyCode.K, },
         };
-
+        currentKey = key[currentKeyIndex];
     }
     void Update()
     {
-        currentKey = key[currentKeyIndex];
+   
         flipcontroller();
         if (Input.GetKey(currentKey[0]) && isJump.Jump)
         {
@@ -87,7 +87,7 @@ public class PlayerMove : MonoBehaviour
         //以下用于动画
         isWalk = rb.velocity.x != 0;
         anim.SetBool("iswalk", isWalk);
-        if(rb.velocity.y>0.3f)
+        if(isJump.Jump==false)
         {
             onSky = true;
         }
