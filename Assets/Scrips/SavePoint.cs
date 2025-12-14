@@ -7,9 +7,6 @@ public class SavePoint : MonoBehaviour
     static public Vector2 spp;
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            spp=collision.transform.position;
-        }
+        spp=collision.transform.position;
     }
 }

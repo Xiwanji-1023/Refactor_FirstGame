@@ -27,7 +27,7 @@ public class changeMenu : MonoBehaviour
 
     public void Change()
     {
-        if (!BaseSetting.isMenuAnimation) { BaseSetting.isMenuAnimation = true; ; StartCoroutine(ChangeMenu()); }
+        if (!BaseSetting.isMenuAnimation) { BaseSetting.isMenuAnimation = true; StartCoroutine(ChangeMenu()); }
 
     }
 
