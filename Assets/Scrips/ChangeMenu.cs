@@ -33,13 +33,19 @@ public class AutoShowBillboardUI : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         if (!BaseSetting.isMenuAnimation) { BaseSetting.isMenuAnimation = true; StartCoroutine(ChangeMenu()); }
 
 =======
+=======
+>>>>>>> Stashed changes
         if (other.CompareTag("Player"))
         {
             billboardUIPanel.SetActive(false);
         }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
 
