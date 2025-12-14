@@ -11,9 +11,10 @@ public class PlayerMove : MonoBehaviour
     public int MoveSpeed = 10;
     public int JumpAbility = 5;
     public static float MoveController;
-    //
+    //以下用于动画
     private bool isWalk;
     private Animator anim;
+    private bool onSky;
     //
     private int facingdirection = 1;
     private bool faceRight = true;
@@ -31,7 +32,7 @@ public class PlayerMove : MonoBehaviour
     {
         Application.targetFrameRate = 60;
         rb = GetComponent<Rigidbody2D>();
-        //
+        //以下用于动画
         anim = GetComponent<Animator>();
         //
         currentKey = new List<KeyCode>();
@@ -86,6 +87,15 @@ public class PlayerMove : MonoBehaviour
         //以下用于动画
         isWalk = rb.velocity.x != 0;
         anim.SetBool("iswalk", isWalk);
+        if(rb.velocity.y>0.3f)
+        {
+            onSky = true;
+        }
+        else
+        {
+            onSky = false;
+        }
+        anim.SetBool("sky", onSky);
         //
         //MoveController = UnityEngine.Input.GetAxisRaw("Horizontal");
         //switch (nowKeys)
