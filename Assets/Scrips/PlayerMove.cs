@@ -87,7 +87,7 @@ public class PlayerMove : MonoBehaviour
         //以下用于动画
         isWalk = rb.velocity.x != 0;
         anim.SetBool("iswalk", isWalk);
-        if(rb.velocity.y>0.3f)
+        if(isJump.Jump==false)
         {
             onSky = true;
         }
