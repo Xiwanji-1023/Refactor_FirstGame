@@ -15,6 +15,7 @@ TagManager:
   - wall
   - decorate
   - savePoint
+  - KeyChange
   layers:
   - Default
   - TransparentFX
